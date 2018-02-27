@@ -1,0 +1,37 @@
+﻿@model WebApp.Models.MyContent
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Translating Number to Word - TerbilangApp</title>
+</head>
+<body>
+	<div>
+		@using (Html.BeginForm())
+		{
+		<p>
+			Please enter your text:
+		</p>
+		<p>
+			@Html.TextAreaFor(model => model.input, new { @class = "form-control", @rows = 3, @cols = 50 })
+			@Html.ValidationMessageFor(model => model.input)
+		</p>
+		<p>	@Html.LabelFor(model => model.output)</p>
+		<p>
+		
+			@Html.Raw(Model.output)
+		</p>
+		<p>
+			
+		</p>
+		<p><input type="submit" value="Execute" /></p>
+		}
+	</div>
+</body>
+</html>
